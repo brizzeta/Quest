@@ -1,34 +1,34 @@
-#include <list>
+п»ї#include <list>
 #include "Perticipant.h"
 #include "Barrier.h"
 
 int main()
 {
-	Participant *mas_part[] = { new Human("Human", 2, 5), new Cat("Cat", 5, 8), new Robot("Robot", 2, 15) };  //список участников
-	Barrier *mas_barr[] = { new RunningTrack("Running Track", 15), new Wall("Wall", 1) };  //список участников
+	Participant *mas_part[] = { new Human("Human", 2, 5), new Cat("Cat", 5, 8), new Robot("Robot", 2, 15) };  //СЃРїРёСЃРѕРє СѓС‡Р°СЃС‚РЅРёРєРѕРІ
+	Barrier *mas_barr[] = { new RunningTrack("Running Track", 15), new Wall("Wall", 1) };  //СЃРїРёСЃРѕРє СѓС‡Р°СЃС‚РЅРёРєРѕРІ
 
-	for (int i = 0; i < 3; i++)     //проходимся по каждому участнику
+	for (int i = 0; i < 3; i++)     //РїСЂРѕС…РѕРґРёРјСЃСЏ РїРѕ РєР°Р¶РґРѕРјСѓ СѓС‡Р°СЃС‚РЅРёРєСѓ
 	{
-		for (int k = 0; k < 2; k++)   //участник проходит 2 препятствия
+		for (int k = 0; k < 2; k++)   //СѓС‡Р°СЃС‚РЅРёРє РїСЂРѕС…РѕРґРёС‚ 2 РїСЂРµРїСЏС‚СЃС‚РІРёСЏ
 		{
-			while (mas_part[i]->Get_value() <= mas_barr[k]->Get_value())    //сверяем каждую единицу измерения прохождения препятствия
+			while (mas_part[i]->Get_value() <= mas_barr[k]->Get_value())    //СЃРІРµСЂСЏРµРј РєР°Р¶РґСѓСЋ РµРґРёРЅРёС†Сѓ РёР·РјРµСЂРµРЅРёСЏ РїСЂРѕС…РѕР¶РґРµРЅРёСЏ РїСЂРµРїСЏС‚СЃС‚РІРёСЏ
 			{
 				mas_part[i]->Set_value();
-				if (k == 0)          //если беговая дорожка
+				if (k == 0)          //РµСЃР»Рё Р±РµРіРѕРІР°СЏ РґРѕСЂРѕР¶РєР°
 				{					
-					if (mas_part[i]->Get_value() == mas_part[i]->Get_max_run())   //если участник достиг максимума своих возможностей
+					if (mas_part[i]->Get_value() == mas_part[i]->Get_max_run())   //РµСЃР»Рё СѓС‡Р°СЃС‚РЅРёРє РґРѕСЃС‚РёРі РјР°РєСЃРёРјСѓРјР° СЃРІРѕРёС… РІРѕР·РјРѕР¶РЅРѕСЃС‚РµР№
 					{						
 						mas_part[i]->Set_barrier(1);
-						break;                             //заканчивает участие
+						break;                             //Р·Р°РєР°РЅС‡РёРІР°РµС‚ СѓС‡Р°СЃС‚РёРµ
 					}		
 					mas_part[i]->Run();
 				}
-				else                 //если стена
+				else                 //РµСЃР»Рё СЃС‚РµРЅР°
 				{					
-					if (mas_part[i]->Get_value() == mas_part[i]->Get_max_jump())   //если участник достиг максимума своих возможностей
+					if (mas_part[i]->Get_value() == mas_part[i]->Get_max_jump())   //РµСЃР»Рё СѓС‡Р°СЃС‚РЅРёРє РґРѕСЃС‚РёРі РјР°РєСЃРёРјСѓРјР° СЃРІРѕРёС… РІРѕР·РјРѕР¶РЅРѕСЃС‚РµР№
 					{			
 						mas_part[i]->Set_barrier(2);
-						break;                             //заканчивает участие
+						break;                             //Р·Р°РєР°РЅС‡РёРІР°РµС‚ СѓС‡Р°СЃС‚РёРµ
 					}
 					mas_part[i]->Jump();
 				}
@@ -37,7 +37,7 @@ int main()
 	}
 
 	cout << endl << "RESULTS" << endl << endl;
-	for (int i = 0; i < 3; i++)     //проходимся по каждому участнику
+	for (int i = 0; i < 3; i++)     //РїСЂРѕС…РѕРґРёРјСЃСЏ РїРѕ РєР°Р¶РґРѕРјСѓ СѓС‡Р°СЃС‚РЅРёРєСѓ
 	{
 		if (mas_part[i]->Get_barrier() == 1)
 		{

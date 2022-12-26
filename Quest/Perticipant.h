@@ -1,18 +1,18 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 using namespace std;
 
 class Participant
 {
 protected:
-	string name;        //участник
-	short value;        //текущее значение
-	short max_jump;     //максимальная высота прыжка
-	short max_run;      //максимальное расстояние пробега
-	short barrier;      //препятствие которое не пройдено (если 1 - беговая дорожка, 2 - стена)
+	string name;        //СѓС‡Р°СЃС‚РЅРёРє
+	short value;        //С‚РµРєСѓС‰РµРµ Р·РЅР°С‡РµРЅРёРµ
+	short max_jump;     //РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РІС‹СЃРѕС‚Р° РїСЂС‹Р¶РєР°
+	short max_run;      //РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РїСЂРѕР±РµРіР°
+	short barrier;      //РїСЂРµРїСЏС‚СЃС‚РІРёРµ РєРѕС‚РѕСЂРѕРµ РЅРµ РїСЂРѕР№РґРµРЅРѕ (РµСЃР»Рё 1 - Р±РµРіРѕРІР°СЏ РґРѕСЂРѕР¶РєР°, 2 - СЃС‚РµРЅР°)
 public:
 	Participant() = default;
-	Participant(string n, short j, short r)     //устанавливаем имя участника (человек, кот, робот)
+	Participant(string n, short j, short r)     //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РёРјСЏ СѓС‡Р°СЃС‚РЅРёРєР° (С‡РµР»РѕРІРµРє, РєРѕС‚, СЂРѕР±РѕС‚)
 	{
 		name = n;
 		max_jump = j;
@@ -20,18 +20,18 @@ public:
 		value = 0;
 	}	
 
-	virtual string Get_name()        { return nullptr; }; //получить имя участника
-	virtual short Get_value()        { return 0; };       //получить максимальную высоту прыжка
-	virtual short Get_max_jump()     { return 0; };       //получить максимальную высоту прыжка
-	virtual short Get_max_run()      { return 0; };       //получить максимальное расстояние пробега
-	virtual short Get_barrier()      { return 0; };       //получить номер непройденного препятствия
-	virtual void Set_barrier(short b)           = 0;      //устанавливаем номер непройденного препятствия
-	virtual void Set_value()                    = 0;      //устанавливаем текущую высоту прыжка
-	virtual void Jump()                         = 0;      //бегать
-	virtual void Run()                          = 0;      //прыгать
+	virtual string Get_name()        { return nullptr; }; //РїРѕР»СѓС‡РёС‚СЊ РёРјСЏ СѓС‡Р°СЃС‚РЅРёРєР°
+	virtual short Get_value()        { return 0; };       //РїРѕР»СѓС‡РёС‚СЊ РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ РІС‹СЃРѕС‚Сѓ РїСЂС‹Р¶РєР°
+	virtual short Get_max_jump()     { return 0; };       //РїРѕР»СѓС‡РёС‚СЊ РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ РІС‹СЃРѕС‚Сѓ РїСЂС‹Р¶РєР°
+	virtual short Get_max_run()      { return 0; };       //РїРѕР»СѓС‡РёС‚СЊ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РїСЂРѕР±РµРіР°
+	virtual short Get_barrier()      { return 0; };       //РїРѕР»СѓС‡РёС‚СЊ РЅРѕРјРµСЂ РЅРµРїСЂРѕР№РґРµРЅРЅРѕРіРѕ РїСЂРµРїСЏС‚СЃС‚РІРёСЏ
+	virtual void Set_barrier(short b)           = 0;      //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РЅРѕРјРµСЂ РЅРµРїСЂРѕР№РґРµРЅРЅРѕРіРѕ РїСЂРµРїСЏС‚СЃС‚РІРёСЏ
+	virtual void Set_value()                    = 0;      //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј С‚РµРєСѓС‰СѓСЋ РІС‹СЃРѕС‚Сѓ РїСЂС‹Р¶РєР°
+	virtual void Jump()                         = 0;      //Р±РµРіР°С‚СЊ
+	virtual void Run()                          = 0;      //РїСЂС‹РіР°С‚СЊ
 };
 
-class Human : public Participant // наследование
+class Human : public Participant // РЅР°СЃР»РµРґРѕРІР°РЅРёРµ
 {
 public:
 	Human();
@@ -60,7 +60,7 @@ public:
 	}
 };
 
-class Cat : public Participant // наследование
+class Cat : public Participant // РЅР°СЃР»РµРґРѕРІР°РЅРёРµ
 {
 public:
 	Cat() { value = 0; };
@@ -89,7 +89,7 @@ public:
 	}
 };
 
-class Robot : public Participant // наследование
+class Robot : public Participant // РЅР°СЃР»РµРґРѕРІР°РЅРёРµ
 {
 public:
 	Robot() { value = 0; };

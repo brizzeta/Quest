@@ -1,10 +1,10 @@
-#pragma once
+п»ї#pragma once
 
 class Barrier
 {
 protected:
-	string name;             //название преграды
-	short value;             //значение
+	string name;             //РЅР°Р·РІР°РЅРёРµ РїСЂРµРіСЂР°РґС‹
+	short value;             //Р·РЅР°С‡РµРЅРёРµ
 public:
 	Barrier() = default;
 	Barrier(string n, short v)
@@ -12,8 +12,8 @@ public:
 		name = n;
 		value = v;
 	}
-	virtual string Get_name() { return nullptr; }; //получить имя участника
-	virtual short Get_value() { return 0; };       //получить значение
+	virtual string Get_name() { return nullptr; }; //РїРѕР»СѓС‡РёС‚СЊ РёРјСЏ СѓС‡Р°СЃС‚РЅРёРєР°
+	virtual short Get_value() { return 0; };       //РїРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ
 };
 
 class RunningTrack : public Barrier
